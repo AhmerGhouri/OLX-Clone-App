@@ -24,7 +24,7 @@ const Google_Signin = (history) => {
                     .then(() => {
                         dispatch({ type: "SETUSER", payload: create_user })
                         alert("login Sucessfully")
-                        this.props.history.push('/item')
+                        // this.props.history.push('/item')
 
                     })
 
