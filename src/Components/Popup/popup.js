@@ -81,15 +81,15 @@ class PopUp extends React.Component {
 
 
         {
-            if (this.props.current_user === 'Ahmer'){
+            if (this.props.current_user === 'Ahmer') {
 
                 console.log("Chal Gaya")
 
 
 
             }
-        
-    }
+
+        }
 
         return (
 
@@ -97,7 +97,20 @@ class PopUp extends React.Component {
 
             <div>
 
-                <Button className="log" onClick={() => { this.handleModal() }}>Login</Button>
+                {(this.props.current_user == '') ?
+
+
+
+                    <div>
+                        <Button className="log" onClick={() => { this.handleModal() }}>Login</Button>
+                    </div> :
+                    <div>
+                        User
+                    </div>
+                }
+             
+                           
+                    
                 <Modal className="body" show={this.state.show} onHide={() => { this.handleModal() }} >
                     <Modal.Header closeButton style={{ border: "none" }}></Modal.Header>
                     <Modal.Body className="modals">

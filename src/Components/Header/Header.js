@@ -28,11 +28,23 @@ import Popup from '../Popup/popup'
 
 class Header extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+
+      user : this.props.current_user
+
+    }
+
+
+  }
+
 
 
   render() {
 
 
+    console.log("user ==>",this.props.current_user)
 
     return (
 
@@ -78,11 +90,11 @@ class Header extends React.Component {
 
           <div>
 
-           
+
             <Popup />
 
           </div>
-          <Link to='/item'><button className="sell"><AddIcon style={{ fontSize: 20 }} />  SELL</button></Link>
+          <Link to='/item'><button className="sell" disabled={(this.props.current_user == '') ? true : false}><AddIcon style={{ fontSize: 20 }} />  SELL</button></Link>
 
 
 
